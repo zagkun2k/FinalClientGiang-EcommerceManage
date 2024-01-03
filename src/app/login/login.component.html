@@ -1,0 +1,54 @@
+<div class="wrapper bg-white" style="background-color: #f3eded !important;">
+  <div class="h2 text-center" style="position: relative; display: block; height: 240px;"><img style="position: absolute; top: -17px; width: 63%; left: 77px;"src="img/Giang's Ecommerce_Footer.png" alt="logo"></div>
+  <form class="pt-3" [formGroup]="postForm">
+    <div class="form-group py-2">
+      <div class="input-field">
+        <span class="far fa-user p-2"></span>
+        <input style="background-color: #f3eded;"
+          [ngClass]="{
+            'is-invalid':
+              postForm.get('email')?.touched && postForm.get('email')?.invalid
+          }"
+          type="text"
+          class="form-control"
+          placeholder="Nhập địa chỉ email"
+          formControlName="email"
+        />
+        <small class="invalid-feedback">Email không hợp lệ</small>
+      </div>
+    </div>
+    <div class="form-group py-1 pb-2">
+      <div class="input-field">
+        <span class="fas fa-lock p-2"></span>
+        <input style="background-color: #f3eded;"
+          [ngClass]="{
+            'is-invalid':
+              postForm.get('password')?.touched && postForm.get('password')?.invalid
+          }"
+          type="text"
+          placeholder="Nhập mật khẩu"
+          class="form-control"
+          formControlName="password"
+          [type]="show ? 'text' : 'password'"
+          required
+        />
+        <small class="invalid-feedback">Password phải >= 6 kí tự</small>
+        <button style="background-color: #f3eded !important;" class="btn bg-white text-muted" (click)="toggle()">
+          <span style="background-color: #f3eded;" [class]="show === true ? 'far fa-eye' : 'far fa-eye-slash'"></span>
+        </button>
+      </div>
+    </div>
+    <button class="btn btn-block text-center my-3" (click)="Login()">
+      Đăng nhập
+    </button>
+    <!-- <div class="ps-form__footer">
+      <p>Connect with:</p>
+      <ul class="ps-list--social">
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+  </div> -->
+  </form>
+</div>
