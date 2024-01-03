@@ -30,17 +30,17 @@
 
             <table mat-table matTableExporter #exporter="matTableExporter" [hiddenColumns]="[0,8,9]" [dataSource]="listData" matSort class="mat-elevation-z8">
                 <ng-container matColumnDef="image">
-                    <th mat-header-cell *matHeaderCellDef style="width: 10%;"></th>
+                    <th mat-header-cell *matHeaderCellDef style="width: 8%;">Avatar</th>
                     <td mat-cell *matCellDef="let row">
                         <img [src]="row.image" style="border-radius: 50%;object-fit: cover; width: 60px; height: 60px;" class="p-1">
                     </td>
                 </ng-container>
                 <ng-container matColumnDef="userId">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 5%;">Id</th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 5%;">ID</th>
                     <td mat-cell *matCellDef="let row">{{row.userId}}</td>
                 </ng-container>
                 <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 20%;">Họ tên</th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 19%;">Họ tên</th>
                     <td mat-cell *matCellDef="let row">{{row.name}}</td>
                 </ng-container>
                 <ng-container matColumnDef="email">
@@ -64,13 +64,13 @@
                     <td mat-cell *matCellDef="let row">{{row.registerDate|date:'dd-MM-yyy'}}</td>
                 </ng-container>
                 <ng-container matColumnDef="view">
-                    <th mat-header-cell *matHeaderCellDef style="width: 5%;">Xem</th>
+                    <th mat-header-cell *matHeaderCellDef style="width: 7%;">Chỉnh sửa</th>
                     <td mat-cell *matCellDef="let row">
                         <app-edit-customer [id]='row.userId' (editFinish)="finish()"></app-edit-customer>
                     </td>
                 </ng-container>
                 <ng-container matColumnDef="delete">
-                    <th mat-header-cell *matHeaderCellDef style="width: 5%;">Xoá</th>
+                    <th mat-header-cell *matHeaderCellDef style="width: 6%;">Xoá</th>
                     <td mat-cell *matCellDef="let row">
                         <a style="color: steelblue; cursor: pointer;" (click)="delete(row.userId, row.name)"><i class="fa fa-trash"></i></a>
                     </td>

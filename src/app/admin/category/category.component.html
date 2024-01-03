@@ -26,7 +26,7 @@
                     <td mat-cell *matCellDef="let row">{{row.categoryName}}</td>
                 </ng-container>
                 <ng-container matColumnDef="view">
-                    <th mat-header-cell *matHeaderCellDef style="width: 10%; text-align: center;">Xem</th>
+                    <th mat-header-cell *matHeaderCellDef style="width: 10%; text-align: center;">Chỉnh sửa</th>
                     <td mat-cell *matCellDef="let row" style="text-align: center;">
                         <app-edit-category [id]='row.categoryId' (editFinish)="finish()"></app-edit-category>
                     </td>
