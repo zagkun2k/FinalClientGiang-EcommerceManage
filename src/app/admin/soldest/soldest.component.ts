@@ -34,6 +34,20 @@ export class SoldestComponent implements OnInit {
     Chart.register(...registerables);
   }
 
+  getNameProduct(name: string) : string {
+
+    switch(name) {
+
+      case 'Điện thoại': return 'DT';
+      case 'Laptop': return 'LT';
+      case 'Điện gia dụng': return 'DGD';
+      case 'Đồng hồ': return 'DH';
+      case 'Tivi': return 'TV';
+      case 'Bàn phím': return 'BP';
+      default: return name;
+    }
+  }
+
   getProduct() {
     this.productService.getBestSeller().subscribe(data=>{
       this.products = data as Product[];

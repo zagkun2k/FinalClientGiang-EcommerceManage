@@ -54,6 +54,20 @@ export class StatisticalCategoryComponent implements OnInit {
     })
   }
 
+  getCatogoryIdName(name: string) : string {
+
+    switch(name) {
+
+      case 'Điện thoại': return 'DT';
+      case 'Laptop': return 'LT';
+      case 'Điện gia dụng': return 'DGD';
+      case 'Đồng hồ': return 'DH';
+      case 'Tivi': return 'TV';
+      case 'Bàn phím': return 'BP';
+      default: return name;
+    }
+  }
+
   search(event: any) {
     
     const fValue = (event.target as HTMLInputElement).value.trim().toLowerCase();

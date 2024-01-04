@@ -22,15 +22,15 @@
                             <span class="legend-text">Còn nhiều hàng</span>
                         </div>
                         <div class="legend-item">
-                            <span class="legend-color" style="background-color: #B4D4FF;"></span>
+                            <span class="legend-color" style="background-color: #7FC7D9;"></span>
                             <span class="legend-text">Hàng tầm trung</span>
                         </div>
                         <div class="legend-item">
-                            <span class="legend-color" style="background-color: #E36414;"></span>
+                            <span class="legend-color" style="background-color: #F6B17A;"></span>
                             <span class="legend-text">Gần hết hàng</span>
                         </div>
                         <div class="legend-item">
-                            <span class="legend-color" style="background-color: #B31312;"></span>
+                            <span class="legend-color" style="background-color: #EF6262;"></span>
                             <span class="legend-text">Đã hết hàng</span>
                         </div>
                     </div>
@@ -45,7 +45,9 @@
                 </ng-container>
                 <ng-container matColumnDef="productId">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 12%">Mã sản phẩm</th>
-                    <td mat-cell *matCellDef="let row">{{row.productId}}</td>
+                    <td mat-cell *matCellDef="let row">
+                    {{getNameProduct(row.category.categoryName)}}_{{row.productId}}_{{row.enteredDate | date:'ddMMyyyy'}}
+                    </td>
                 </ng-container>
                 <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 20%;">Tên sản phẩm</th>
@@ -80,7 +82,7 @@
                     </td>
                 </ng-container>
                 <tr mat-header-row *matHeaderRowDef="columns"></tr>
-                <tr mat-row *matRowDef="let row; columns: columns;" [style.background-color]="(row.quantity <= 0) ? '#B31312' : (row.quantity <= 10) ? '#E36414' : (row.quantity > 10 && row.quantity <= 50) ? '#B4D4FF' : '#A1EEBD'"></tr>
+                <tr mat-row *matRowDef="let row; columns: columns;" [style.background-color]="(row.quantity <= 0) ? '#EF6262' : (row.quantity <= 10) ? '#F6B17A' : (row.quantity > 10 && row.quantity <= 50) ? '#7FC7D9' : '#A1EEBD'"></tr>
             </table>
             <mat-paginator [length]="productsLength" showFirstLastButtons [pageSize]="10" [pageSizeOptions]="[10, 25, 50, 100]">
             </mat-paginator>

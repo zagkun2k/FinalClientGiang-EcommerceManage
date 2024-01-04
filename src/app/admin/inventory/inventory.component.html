@@ -23,14 +23,14 @@
                 </ng-container>
                 <ng-container matColumnDef="productId">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 10%">Mã sản phẩm</th>
-                    <td mat-cell *matCellDef="let row">{{row.productId}}</td>
+                    <td mat-cell *matCellDef="let row">{{getNameProduct(row.category.categoryName)}}_{{row.productId}}_{{row.enteredDate | date:'ddMMyyyy'}}</td>
                 </ng-container>
                 <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 15%;">Tên sản phẩm</th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 25%;">Tên sản phẩm</th>
                     <td mat-cell *matCellDef="let row">{{row.name}}</td>
                 </ng-container>
                 <ng-container matColumnDef="quantity">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 20%;">Số lượng còn trong kho</th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 10%;">Số tồn kho</th>
                     <td mat-cell *matCellDef="let row">{{row.quantity}}</td>
                 </ng-container>
                 <ng-container matColumnDef="category">

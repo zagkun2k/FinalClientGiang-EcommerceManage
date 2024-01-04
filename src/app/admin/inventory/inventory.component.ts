@@ -34,6 +34,20 @@ export class InventoryComponent implements OnInit {
     Chart.register(...registerables);
   }
 
+  getNameProduct(name: string) : string {
+
+    switch(name) {
+
+      case 'Điện thoại': return 'DT';
+      case 'Laptop': return 'LT';
+      case 'Điện gia dụng': return 'DGD';
+      case 'Đồng hồ': return 'DH';
+      case 'Tivi': return 'TV';
+      case 'Bàn phím': return 'BP';
+      default: return name;
+    }
+  }
+
   getAll() {
     this.statisticalService.getInventory().subscribe(data => {
       this.products = data as Product[];

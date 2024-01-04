@@ -34,8 +34,8 @@
             </div>
             <table mat-table matTableExporter #exporter="matTableExporter" [hiddenColumns]="[2]" [dataSource]="listData" matSort class="mat-elevation-z8">
                 <ng-container matColumnDef="index">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 6%;">STT</th>
-                    <td mat-cell *matCellDef="let row, let i = index">{{i+1}}</td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 15%;">Mã đánh giá</th>
+                    <td mat-cell *matCellDef="let row">MĐG_KH{{row.user.userId}}_{{row.rateDate | date:'ddMMyyyy'}}</td>
                 </ng-container>
                 <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 20%;">Khách hàng</th>
@@ -49,7 +49,7 @@
                     </td>
                 </ng-container>
                 <ng-container matColumnDef="rating">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 15%;">Đánh giá</th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 6%;">Đánh giá</th>
                     <td mat-cell *matCellDef="let row">
                         <ngb-rating [(rate)]="row.rating" [starTemplate]="t" [readonly]="true" [max]="5"
                             title="{{row.rating}} sao">

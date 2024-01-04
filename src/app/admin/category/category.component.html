@@ -18,8 +18,8 @@
         <div class="col-12">
             <table mat-table matTableExporter #exporter="matTableExporter" [hiddenColumns]="[2,3]" [dataSource]="listData" matSort class="mat-elevation-z8">
                 <ng-container matColumnDef="categoryId">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 15%;">Mã nhãn hiệu</th>
-                    <td mat-cell *matCellDef="let row">{{row.categoryId}}</td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 15%;">Mã danh mục</th>
+                    <td mat-cell *matCellDef="let row">LDM_{{getCategoryIdName(row.categoryName)}}</td>
                 </ng-container>
                 <ng-container matColumnDef="categoryName">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 60%;">Tên nhãn hiệu</th>

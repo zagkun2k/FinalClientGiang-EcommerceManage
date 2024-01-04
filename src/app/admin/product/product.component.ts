@@ -41,6 +41,20 @@ export class ProductComponent implements OnInit {
     })
   }
 
+  getNameProduct(name: string) : string {
+
+    switch(name) {
+
+      case 'Điện thoại': return 'DT';
+      case 'Laptop': return 'LT';
+      case 'Điện gia dụng': return 'DGD';
+      case 'Đồng hồ': return 'DH';
+      case 'Tivi': return 'TV';
+      case 'Bàn phím': return 'BP';
+      default: return name;
+    }
+  }
+
   delete(id: number, name: string) {
     Swal.fire({
       title: 'Bạn muốn xoá ' + name + ' ?',
