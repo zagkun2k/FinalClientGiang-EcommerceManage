@@ -78,7 +78,7 @@ export class OrderComponent implements OnInit {
       } else if (filter.toLowerCase() === "đang giao hàng") {
 
         filter = "2";
-      } else if (filter.toLowerCase() === "đã huỷ") {
+      } else if (filter.toLowerCase() === "đã hủy") {
 
         filter = "3";
       } 
