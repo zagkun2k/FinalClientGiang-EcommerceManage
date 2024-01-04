@@ -72,7 +72,7 @@ export class OrderComponent implements OnInit {
       if (filter.toLowerCase() === "đợi shop xử lí đơn") {
 
         filter = "0";
-      } else if (filter.toLowerCase() === "đã giao") {
+      } else if (filter.toLowerCase() === "đã giao thành công") {
 
         filter = "1";
       } else if (filter.toLowerCase() === "đang giao hàng") {
